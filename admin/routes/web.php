@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->group(function () {
 
     // This handles: localhost:3000/admin
-    Route::get('/', function () {
+    Route::get('', function () {
         return view('dashboard'); // Renders admin/resources/views/welcome.blade.php
     });
 });

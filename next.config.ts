@@ -3,18 +3,29 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   async rewrites() {
+    const backendUrl = process.env.BACKEND_URL;
     return {
       beforeFiles: [
         {
-          // Intercepts localhost:3000/admin and forwards to Laravel
-          source: '/admin/:path*',
-          destination: 'http://127.0.0.1:8000/admin/:path*', 
+        source: '/admin',
+        destination: `${backendUrl}/admin`,
         },
         {
-          // Intercepts Laravel's Vite assets
-          source: '/build/:path*',
-          destination: 'http://127.0.0.1:8000/build/:path*',
+          source: '/admin/:path*',
+          destination: `${backendUrl}/admin/:path*`,
         },
+        {
+          source: '/build/:path*',
+          destination: `${backendUrl}/build/:path*`,
+        },
+        {
+          source: '/css/:path*',
+          destination: `${backendUrl}/css/:path*`,
+        },
+        {
+          source: '/js/:path*',
+          destination: `${backendUrl}/js/:path*`,
+        }
       ],
     };
   },
