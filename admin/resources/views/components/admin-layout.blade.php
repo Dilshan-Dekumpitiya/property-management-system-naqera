@@ -9,17 +9,17 @@
 <body class="bg-[#eef0f4] font-sans antialiased text-gray-900">
 
     <div class="flex min-h-screen">
-        
+
         <x-sidebar />
 
         <div class="flex-1 ml-64 flex flex-col">
-            
+
             <header class="flex justify-between items-center px-10 py-8">
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900">{{ $headerTitle ?? 'Dashboard' }}</h2>
                     <p class="text-gray-500 text-sm mt-1">Welcome Back!, Here is what's happening in your platform</p>
                 </div>
-                
+
                 <div class="flex items-center space-x-4">
                     <button class="px-4 py-2 bg-[#d16d6a] text-white text-sm font-medium rounded-full flex items-center shadow-sm">
                         Today <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -35,10 +35,7 @@
                 {{ $slot }}
             </main>
 
-            <footer class="text-center py-6 text-xs text-gray-400">
-                <p>Version 1.0.0</p>
-                <p>Powered by D11 SOFT (PVT) LTD | © 2026 - All rights reserved.</p>
-            </footer>
+
         </div>
     </div>
 
